@@ -60,7 +60,7 @@ The scatter plot was used to present the anomaly results, making it easier to se
 
 The analysis showed that the same car names appeared repeatedly among flagged anomalies, including brands associated with luxury vehicles, such as Range Rover (Jaguar Land Rover Automotive plc, 2024). This suggests these values are not true anomalies, but reflect genuine market prices. 
 
-After assessing anomalies, the ‘car_name’ and index column were dropped due to no longer being required.
+After assessing anomalies, the `car_name` and index column were dropped due to no longer being required.
 
 ![image alt](https://github.com/hmedlyn21/Data-Science-Professional-Practice-/blob/main/column%20drop.png?raw=true)
 
