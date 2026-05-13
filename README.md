@@ -10,4 +10,5 @@ The data was extracted from Kaggle: 'https://www.kaggle.com/code/abdelhamedahmed
 
 ## Initial Exploration 
 In Python, variables were examined for missing values and data type to assess dataset structure and suitability for regression. No missing values were identified, so no imputation or row removal was required, reducing bias risk.
+
 ![image alt](https://github.com/hmedlyn21/Data-Science-Professional-Practice-/blob/main/df.info%201.png?raw=true)
