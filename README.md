@@ -63,3 +63,37 @@ Three categorical variables were converted into numerical format using one-hot e
 ![image alt](https://github.com/hmedlyn21/Data-Science-Professional-Practice-/blob/main/one-hot%20encoding%208.png?raw=true)
 
 Further checks for missing values confirmed that transformations had been completed successfully, as any values that could not be converted were recorded as null and could therefore be identified.
+
+# Relationship Analysis
+
+The relationships between numeric variables in the training dataset were examined first. Numerical columns were selected and a correlation matrix calculated to measure the strength of linear relationships between variables. A hypothesis was formed that all input variables would affect car price.
+
+A heatmap is then created to visualise these correlations more clearly, with values close to 1 or -1 indicating strong relationships. The heatmap has been halved because a correlation matrix is symmetric, showing only one half removes duplicate information and makes the visual easier to read for less technical users.
+
+
+![image alt](https://github.com/hmedlyn21/Data-Science-Professional-Practice-/blob/main/Heat%20map.png?raw=true)
+
+This also identifies and prints pairs of variables with correlation values above 0.80, as these may indicate multicollinearity. This step is important before building a regression model, because highly correlated predictors can reduce the reliability and interpretability of the model. Overall, the results show a strong relationship between kms driven and manufacture year, while engine and seats show limited linear assocation. 
+
+# Model Fitting & Performance
+
+## Model Selection
+
+A standard linear regression model was initially applied, but its R² score of 0.37 showed limited explanatory power. This suggests car prices were not well represented by a simple linear relationship. As pricing is influenced by interacting factors such as mileage, age, engine size, etc, Random Forest was more suitable because it can model non-linear relationships without the assumptions required by linear regression. It is also more robust to outliers and variation, making it a better choice for improving predictive performance (James et al., 2021).
+
+## Performance
+
+The Random Forest model performed moderately well on the test data, achieving an MAE of ₹532,779, RMSE of ₹1,194,290, and R² of 0.627. The MAE shows that predicted prices were around ₹5.3 lakh from the actual value. The higher RMSE suggests that some predictions had larger errors, as this metric gives more weight to bigger mistakes. The R² value indicates that the model explained 62.7% of the variation in car prices. Overall, these results suggest the model captured some of the pricing pattern, although some variation remained unexplained.
+
+![image alt](https://github.com/hmedlyn21/Data-Science-Professional-Practice-/blob/main/Error%20metrics.png?raw=true)
+
+The visual below helps understand the error metrics by showing them graphically. Points close to the red line indicate more accurate predictions, while points further away show larger errors. This makes the error metrics easier to interpret, as the overall accuracy and where the model over or under predicts car prices can be seen.
+
+![image alt](https://github.com/hmedlyn21/Data-Science-Professional-Practice-/blob/main/prediction%20plot.png?raw=true)
+
+## Hypothesis Results
+
+Finally, to evaluate the hypothesis a table assessing feature importance scores is built, ranking from most important to least important, helping identify which features had the greatest influence on the model’s predictions, with kms dirven having the greatest impact.
+
+![image alt](https://github.com/hmedlyn21/Data-Science-Professional-Practice-/blob/main/feature%20importance.png?raw=true)
+
