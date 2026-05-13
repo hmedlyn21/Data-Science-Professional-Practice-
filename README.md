@@ -123,7 +123,7 @@ UK Government (2018) *Data Protection Act 2018*. London: The Stationery Office.
 
 Great Britain. *UK General Data Protection Regulation*. Available at: https://www.legislation.gov.uk/eur/2016/679/contents (Accessed: 11 May 2026). 
 
-McKinney, W. (2022). 8Python for Data Analysis*. O’Reilly Media. 
+McKinney, W. (2022). *Python for Data Analysis*. O’Reilly Media. 
 
 Government of India (2023) *Office Procedure Manual*. New Delhi: Department of Administrative Reforms and Public Grievances
 
