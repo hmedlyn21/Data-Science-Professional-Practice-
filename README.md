@@ -29,7 +29,7 @@ In Python, variables were examined for missing values and data types to assess d
 
 ## Cleansing
 
-Firstly, Excel filters were used to review value ranges. This identified inconsistent formats in the car_prices_in_rupee column. Prices were standardised into rupees using the Indian numbering system, where 1 lakh equals 100,000 and 1 crore equals 10,000,000 (Government of India, 2023), before text was removed and the column converted to integer format. 
+Firstly, Excel filters were used to review value ranges. This identified inconsistent formats in the `car_prices_in_rupee` column. Prices were standardised into rupees using the Indian numbering system, where 1 lakh equals 100,000 and 1 crore equals 10,000,000 (Government of India, 2023), before text was removed and the column converted to integer format. 
 
 ![image alt](https://github.com/hmedlyn21/Data-Science-Professional-Practice-/blob/main/Conversion%202.png?raw=true)
 
