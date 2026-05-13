@@ -9,7 +9,7 @@ Data Science Project
 The data was extracted from Kaggle: 'https://www.kaggle.com/code/abdelhamedahmed2005/car-price-prediction' in CSV format, which allowed it to be easily reviewed in Excel for identifying cleaning opportunities and efficiently imported into Python using Pandas.
 
 ## Initial Exploration 
-In Python, variables were examined for missing values and data type to assess dataset structure and suitability for regression. No missing values were identified, so no imputation or row removal was required, reducing bias risk.
+In Python, variables were examined for missing values and data types to assess dataset structure and suitability for regression. No missing values were identified, so no imputation or row removal was required, reducing bias risk.
 
 ![image alt](https://github.com/hmedlyn21/Data-Science-Professional-Practice-/blob/main/df.info%201.png?raw=true)
 
@@ -29,9 +29,9 @@ Columns were then reassessed for null values to ensure transformations were corr
 
 ## Anomaly Detection
 
-To reduce the risk of an inaccurate model prediction, anomalies are evaluated due to their ability to distort relationships between variables, causing inaccuracy. 
+To reduce the risk of poor model performance, anomalies are evaluated due to their ability to distort relationships between variables, causing inaccuracy. 
 
-A box plot was used to show the distribution of log10-transformed car prices, making large values easier to interpret. 
+A box plot was used to show the distribution of log10-transformed car prices - making large values easier to interpret - necessasary due to the range of car prices. 
 
 ![image alt](https://github.com/hmedlyn21/Data-Science-Professional-Practice-/blob/main/box%20plot%205.png?raw=true)
 
@@ -66,7 +66,7 @@ Further checks for missing values confirmed that transformations had been comple
 
 # Relationship Analysis
 
-The relationships between numeric variables in the training dataset were examined first. Numerical columns were selected and a correlation matrix calculated to measure the strength of linear relationships between variables. A hypothesis was formed that all input variables would affect car price.
+The relationships between numeric variables in the training dataset were examined first. Numerical columns were selected and a correlation matrix calculated to measure the strength of linear relationships between variables. A hypothesis was formed that kms driven would affect car price the most.
 
 A heatmap is then created to visualise these correlations more clearly, with values close to 1 or -1 indicating strong relationships. The heatmap has been halved because a correlation matrix is symmetric, showing only one half removes duplicate information and makes the visual easier to read for less technical users.
 
@@ -83,7 +83,7 @@ A standard linear regression model was initially applied, but its R² score of 0
 
 ## Performance
 
-The Random Forest model performed moderately well on the test data, achieving an MAE of ₹532,779, RMSE of ₹1,194,290, and R² of 0.627. The MAE shows that predicted prices were around ₹5.3 lakh from the actual value. The higher RMSE suggests that some predictions had larger errors, as this metric gives more weight to bigger mistakes. The R² value indicates that the model explained 62.7% of the variation in car prices. Overall, these results suggest the model captured some of the pricing pattern, although some variation remained unexplained.
+The Random Forest model performed moderately well on the test data, achieving an MAE of ₹532,779, RMSE of ₹1,194,290, and R² of 0.63. The MAE shows that predicted prices were around ₹5.3 lakh from the actual value. The higher RMSE suggests that some predictions had larger errors, as this metric gives more weight to bigger mistakes. The R² value indicates that the model explained 62.7% of the variation in car prices. Overall, these results suggest the model captured some of the pricing pattern, although some variation remained unexplained.
 
 ![image alt](https://github.com/hmedlyn21/Data-Science-Professional-Practice-/blob/main/Error%20metrics.png?raw=true)
 
@@ -93,7 +93,25 @@ The visual below helps understand the error metrics by showing them graphically.
 
 ## Hypothesis Results
 
-Finally, to evaluate the hypothesis a table assessing feature importance scores is built, ranking from most important to least important, helping identify which features had the greatest influence on the model’s predictions, with kms dirven having the greatest impact.
+Finally, to evaluate the hypothesis a table assessing feature importance scores is built, ranking from most important to least important, helping identify which features had the greatest influence on the model’s predictions, with kms driven having the greatest impact.
 
 ![image alt](https://github.com/hmedlyn21/Data-Science-Professional-Practice-/blob/main/feature%20importance.png?raw=true)
+
+# References
+
+Microsoft. (2024). *Microsoft Excel Documentation*. Available at: Microsoft Excel Documentation 
+
+Great Britain. *UK General Data Protection Regulation*. Available at: https://www.legislation.gov.uk/eur/2016/679/contents (Accessed: 11 May 2026). 
+
+McKinney, W. (2022). 8Python for Data Analysis*. O’Reilly Media. 
+
+Government of India (2023) *Office Procedure Manual*. New Delhi: Department of Administrative Reforms and Public Grievances
+
+James, G., Witten, D., Hastie, T. and Tibshirani, R., 2021. *An introduction to statistical learning: with applications in R*. 2nd ed. New York: Springer. 
+
+Jaguar Land Rover Automotive plc (2024) *Annual report 2024*. Available at: https://www.jlr.com/annual-report-2024 (Accessed: 13 May 2026). 
+
+Kuhn, M. and Johnson, K. (2019) *Feature engineering and selection: A practical approach for predictive models*. Boca Raton: CRC Press. 
+
+Micci-Barreca, D. (2001). *A preprocessing scheme for high-cardinality categorical attributes in classification and prediction problems*. ACM SIGKDD Explorations Newsletter, 3(1), 27–32. 
 
