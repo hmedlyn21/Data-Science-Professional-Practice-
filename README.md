@@ -1,12 +1,26 @@
 # Predicting Car Prices
 Data Science Project
 
+# Executive Summary
 
+This project developed a model to predict car prices using a Kaggle dataset. The data was explored and cleaned to ensure suitability for analysis. No missing values were found, but the `car_prices_in_rupee` column contained inconsistent formats, so these were standardised. Categorical variables were then converted into numerical form using one-hot encoding.
 
+Potential anomalies were assessed using log-transformed box plots, the IQR method, and scatter plots. Although some cars were flagged as outliers, these were mainly luxury vehicles with plausible prices and were retained. After preprocessing, unnecessary columns were removed and the dataset was split into 70% training and 30% test data.
 
+A linear regression model was first tested but performed poorly, with an R² of 0.37. A Random Forest model then achieved better results, with an MAE of ₹532,779, an RMSE of ₹1,194,290, and an R² of 0.63. Feature importance showed that kilometres driven had the greatest influence on predicted car prices, supporting the hypothesis.
+
+To improve the model, future work should include hyperparameter tuning, and testing additional models such as XGBoost as it can capture non-linear relationships between predictors well. 
+
+# Data Infrastructure 
+
+The data was downloaded into CSV for initial inspection because it can be easily opened in Microsoft Excel, allowing quick validation and identification of issues (Microsoft, 2024). After the initial review, for data cleaning, Python was selected rather than Excel due to Python's ability to document steps, increasing reproducibility. This helps support data integrity under UK GDPR principles, as there is no risk of undocumented manual changes which could occur within Excel. 
+
+Libraries such as Matplotlib within Python was also integrated to support data visualisation. These are necessary within the stages of exploratory data analysis such as scatter plots to assess anomalies, while line plots can help visualise model predictions against actual values. This makes it easier to present results to audiences who may be less technical whilst also helping understand trends and patterns within the data. 
+
+Python’s sklearn will also be utilised for building and evaluating the model. It provides a standardised framework, allowing the data to be split into a train and test set and fit the model with minimal code. It also supports model evaluation metrics, making it easier to assess the models performance on predicting car prices. However, it does have limitations when working with complex deep learning tasks.  
 
 # Data Preprocessing
-The data was extracted from Kaggle: 'https://www.kaggle.com/code/abdelhamedahmed2005/car-price-prediction' in CSV format, which allowed it to be easily reviewed in Excel for identifying cleaning opportunities and efficiently imported into Python using Pandas.
+The data was extracted from Kaggle: 'https://www.kaggle.com/code/abdelhamedahmed2005/car-price-prediction' in CSV format, which allowed it to be easily reviewed in Excel for cleaning opportunities and efficiently imported into Python using Pandas.
 
 ## Initial Exploration 
 In Python, variables were examined for missing values and data types to assess dataset structure and suitability for regression. No missing values were identified, so no imputation or row removal was required, reducing bias risk.
@@ -97,9 +111,15 @@ Finally, to evaluate the hypothesis a table assessing feature importance scores 
 
 ![image alt](https://github.com/hmedlyn21/Data-Science-Professional-Practice-/blob/main/feature%20importance.png?raw=true)
 
+# Considerations
+
+Ethical considerations included using the dataset responsibly and being transparent about anomaly retention, and modelling decisions. Potential anomalies were kept where they reflected genuine luxury vehicle prices, helping avoid bias from removing valid market data. It was also important to recognise that bias in the dataset could affect prediction fairness, so results should support rather than replace human judgement.
+
 # References
 
 Microsoft. (2024). *Microsoft Excel Documentation*. Available at: Microsoft Excel Documentation 
+
+UK Government (2018) *Data Protection Act 2018*. London: The Stationery Office. 
 
 Great Britain. *UK General Data Protection Regulation*. Available at: https://www.legislation.gov.uk/eur/2016/679/contents (Accessed: 11 May 2026). 
 
